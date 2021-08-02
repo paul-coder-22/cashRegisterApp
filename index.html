@@ -5,46 +5,114 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fb676f87ae.js" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <title>Cash Register App</title>
 </head>
 
 <body>
 
-    <input type="number" id="billAmount">
-    <input type="number" id="cashGiven">
-    <!-- <input type="button" onclick="getValue()" value="click"> -->
-    <button onclick="getValue()"> click</button>
-    <table>
-        <tr>
-            <th>2000:</th>
-            <td id="twoThoudand"></td>
-        </tr>
-        <tr>
-            <th>500:</th>
-            <td id="fiveHundred"></td>
-        </tr>
-        <tr>
-            <th>100:</th>
-            <td id="oneHundred"></td>
-        </tr>
-        <tr>
-            <th>50:</th>
-            <td id="fifty"></td>
-        </tr>
-        <tr>
-            <th>20:</th>
-            <td id="twenty"></td>
-        </tr>
-        <tr>
-            <th>10:</th>
-            <td id="ten"></td>
-        </tr>
-        <tr>
-            <th>5:</th>
-            <td id="five"></td>
-        </tr>
-    </table>
+    <div class="app-container">
+        <!--         <nav class="navigation">
+            <div class="navigation-container">
+                <div>Github</div>
+                <div>Linkedin</div>
+                <div>Stack-Overflow</div>
+            </div>
+        </nav> -->
+        <h1 class="heading">Cash Register App</h1>
+        <p class="description">Enter the Bill amount Here</p>
+        <div>
+            <label class="label" for="bill-amount">Bill Amount</label>
+            <input id="bill-amount" type="number">
+            <button id="next-button">Next</button>
+        </div>
+
+        <div class="cashGiven" style="display: block;">
+            <label class="label" for="cash-given"></label>
+            <input id="cash-given" type="number">
+            <button id="check-button">Check</button>
+        </div>
+
+        <p id="error-text" style="color: red;"></p>
+        <table class="change-table">
+            <caption>Return Change</caption>
+            <tr>
+                <th>No.of Notes</th>
+                <td class="notes"></td>
+                <td class="notes"></td>
+                <td class="notes"></td>
+                <td class="notes"></td>
+                <td class="notes"></td>
+                <td class="notes"></td>
+                <td class="notes"></td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>2000</td>
+                <td>500</td>
+                <td>100</td>
+                <td>20</td>
+                <td>10</td>
+                <td>5</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="main-content">
+            <input type="number" id="billAmount">
+            <input type="number" id="cashGiven">
+            <button onclick="getValue()"> click</button>
+            <table>
+                <tr>
+                    <th>2000:</th>
+                    <td id="twoThoudand"></td>
+                </tr>
+                <tr>
+                    <th>500:</th>
+                    <td id="fiveHundred"></td>
+                </tr>
+                <tr>
+                    <th>100:</th>
+                    <td id="oneHundred"></td>
+                </tr>
+                <tr>
+                    <th>50:</th>
+                    <td id="fifty"></td>
+                </tr>
+                <tr>
+                    <th>20:</th>
+                    <td id="twenty"></td>
+                </tr>
+                <tr>
+                    <th>10:</th>
+                    <td id="ten"></td>
+                </tr>
+                <tr>
+                    <th>5:</th>
+                    <td id="five"></td>
+                </tr>
+            </table>
+        </div> -->
+    </div>
+
 
     <script src="./script.js"></script>
 </body>

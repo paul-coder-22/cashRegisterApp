@@ -1,3 +1,71 @@
+const billAmount = document.querySelector('#bill-amount');
+const cashGiven = document.querySelector('#cash-given');
+const nextButton = document.querySelector('#next-button');
+const checkButton = document.querySelector('#check-button');
+const errorText = document.querySelector('#error-text');
+const cashDisplayArray = document.querySelectorAll('.notes');
+const cashGivenSection = document.querySelector('.cashGiven');
+const tableSection = document.querySelector('.change-table');
+hideCashGivenAndTable()
+
+nextButton.addEventListener('click', () => {
+    if (billAmount.value > 0) {
+        displayCahGivenSection();
+        checkButton.addEventListener('click', () => {
+            errorText.style.display = 'none'
+            // console.log(billAmount.value)
+            if (billAmount.value > 0) {
+                if (cashGiven.value >= billAmount.value) {
+                    const amountToBeReturn = cashGiven.value - billAmount.value;
+                    calculateChange(amountToBeReturn);
+                    showTable()
+                } else {
+                    showErrorMessage("Given Amount can't be less than Bill Amount.")
+                }
+            } else {
+                showErrorMessage('Invalid Bill Amount')
+            }
+        })
+    } else {
+        hideCashGivenSection()
+        showErrorMessage("Put a Valid Input !! ")
+    }
+})
+
+
+function calculateChange(remainingBalance) {
+    let cashArray = [2000, 500, 100, 20, 10, 5, 1];
+    for (let i = 0; i < cashArray.length; i++) {
+        const quocent = Math.trunc(remainingBalance / cashArray[i])
+        cashDisplayArray[i].innerText = quocent;
+        remainingBalance = remainingBalance % cashArray[i]
+        console.log(remainingBalance)
+    }
+}
+
+
+function showErrorMessage(msgText) {
+    errorText.style.display = 'block'
+    errorText.innerHTML = msgText;
+}
+
+function displayCahGivenSection() {
+    cashGivenSection.style.display = 'block'
+}
+
+function hideCashGivenSection() {
+    cashGivenSection.style.display = 'none'
+}
+function hideCashGivenAndTable() {
+    cashGivenSection.style.display = 'none'
+    tableSection.style.display = 'none'
+}
+function showTable() {
+    tableSection.style.display = 'block'
+}
+
+
+/*
 function getValue() {
 
     let billAmount = Number(document.getElementById('billAmount').value);
@@ -8,6 +76,7 @@ function getValue() {
         document.getElementById(arr[i]).innerHTML = cash[i];
     }
 }
+
 function calculateValue(billAmount, cashGiven) {
     let getValue = cashGiven - billAmount;
     let val = getValue;
@@ -49,5 +118,4 @@ function calculateValue(billAmount, cashGiven) {
     }
     return arr;
 }
-// console.log(arr[1])
-// arr.forEach(e => console.log(e))
+*/
