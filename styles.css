@@ -33,13 +33,17 @@
     color: #fff; 
 }
 /* table color - resize */
+
 table, th, td {
     border: 0.1rem solid var(--border-color);
     border-collapse: collapse;
+    
   }
 th, td {
     padding: 1rem;
+    
 }
+
 
 /* labels */
 .label{
@@ -64,4 +68,35 @@ button{
 }
 .change-table{
     padding: 2rem 0;
+}
+@media only screen and (max-width: 600px) {
+    th, td {
+        padding: 1rem;   
+    }
+}
+@media only screen and (max-width: 517px) {
+    th, td {
+        padding: 1rem ;   
+    }
+}
+@media only screen and (max-width: 499px) {
+    th, td {
+        padding: 1rem 0.8rem;    
+    }
+}
+@media only screen and (max-width: 416px) {
+    th, td {
+        padding: 1rem 0.5rem;    
+    }
+}
+
+@media only screen and (max-width: 377px) {
+    th, td {
+        padding: 0.5rem 0.5rem;    
+    }
+}
+@media only screen and (max-width: 321px) {
+    th, td {
+        padding: 0.5rem 0.2rem;    
+    }
 }
