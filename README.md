@@ -1,5 +1,6 @@
 # cashRegisterApp
 
+<img src="./Cash Reg.png" alt="">
 
 ## Features
 
