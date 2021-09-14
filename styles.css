@@ -66,6 +66,10 @@ button{
     font-size: 0.8rem;
     background-color: var(--button);
 }
+.cashGiven{
+    display: block;
+}
+
 .change-table{
     padding: 2rem 0;
 }
